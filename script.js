@@ -27,13 +27,15 @@ const checkwin = ()=>{
         if((boxtext[e[0]].innerText===boxtext[e[1]].innerText) && (boxtext[e[2]].innerText===boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !=="")){
           document.querySelector('.info').innerText=boxtext[e[0]].innerText + " Won";
           isgameover=true;
+          // When X or O win then image is shown and gameover music is played, if match is draw no such effect will show
           document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width="200px"
+          gameover.play()
         }
     })
 }
 
 // Game logic
-music.play()
+//music.play()
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(element=>{
     let boxtext = element.querySelector('.boxtext');
